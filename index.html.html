@@ -1,0 +1,91 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> feliz cumpleaños </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #e8e8ee;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #contenedor-contenido {
+      display: none;
+      margin-top: 25px;
+    }
+
+    video {
+      max-width: 100%;
+      width: 600px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .mensaje {
+      font-size: 22px;
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>feliz cumple</h1>
+  
+  <button id="btnMostrar">Presiona aquí</button>
+
+  <div id="contenedor-contenido">
+    <p class="mensaje">perdon por la tardansa es q se me habia olvidado heheh</p>
+    
+    <video id="miVideo" controls>
+      
+      <source src="video.mp4" type="video/mp4">
+      Tu navegador no soporta el reproductor de video.
+    </video>
+  </div>
+
+  <script>
+    
+    const boton = document.getElementById('btnMostrar');
+    const contenedor = document.getElementById('contenedor-contenido');
+    const video = document.getElementById('miVideo');
+
+    boton.addEventListener('click', () => {
+      
+      contenedor.style.display = 'block';
+
+      
+      video.play().catch(error => {
+        console.log("La reproducción automática requirió interacción:", error);
+      });
+
+      
+      boton.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
